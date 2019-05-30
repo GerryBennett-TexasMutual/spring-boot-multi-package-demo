@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'TexasMutual Build Agents'
+  name: 'TexasMutual Build Agents'
 
 steps:
 - task: Maven@3
