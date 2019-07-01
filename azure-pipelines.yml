@@ -11,7 +11,6 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'package'
-    options: mavenOptions='-Xmx3072m' javaHomeOption='JDKVersion' jdkVersionOption='1.11' jdkArchitectureOption='x64' publishJUnitResults=false  testResultsFiles='**/surefire-reports/TEST-*.xml'
     artifactoryResolverService: 'Texas Mutual Artifactory Server'
     artifactoryDeployService: 'Texas Mutual Artifactory Server'
     targetDeploySnapshotRepo: 'txmutual-maven-dev-local'
@@ -20,7 +19,7 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
     targetResolveSnapshotRepo: 'maven-dev'
-
+    
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
     artifactoryService: 'Texas Mutual Artifactory Server'
